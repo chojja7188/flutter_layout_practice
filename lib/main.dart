@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_layout_practice/view/birthday_card_page1.dart';
 import 'package:flutter_layout_practice/view/birthday_card_page2.dart';
+import 'package:flutter_layout_practice/view/birthday_card_page3.dart';
 
 void main() {
   runApp(const MyApp());
@@ -49,7 +50,11 @@ class MyHomePage extends StatelessWidget {
                     builder: (context) => const BirthdayCardPage2(toName: 'Sam', fromName: 'Emma'))
                 );
               }, child: const Text('생일 카드 예시2')),
-              ElevatedButton(onPressed: () {}, child: Text('생일 카드 예시3')),
+              ElevatedButton(onPressed: () {
+                Navigator.push(context, MaterialPageRoute(
+                    builder: (context) => const BirthdayCardPage3(toName: 'Sam', fromName: 'Emma'))
+                );
+              }, child: const Text('생일 카드 예시3')),
               ElevatedButton(onPressed: () {}, child: Text('비즈니스 카드 예시'))
             ]
           )
