@@ -27,6 +27,7 @@ class MyApp extends StatelessWidget {
 
 class MyHomePage extends StatelessWidget {
   const MyHomePage({super.key, required this.title});
+
   final String title;
 
   @override
@@ -38,32 +39,44 @@ class MyHomePage extends StatelessWidget {
           title: Text(title),
         ),
         body: Center(
-          child: Column(
-            mainAxisAlignment: MainAxisAlignment.center,
-            children: [
-              ElevatedButton(onPressed: () {
-                Navigator.push(context, MaterialPageRoute(
-                    builder: (context) => const BirthdayCardPage1(toName: 'Sam', fromName: 'Emma'))
-                );
-              }, child: const Text('생일 카드 예시1')),
-              ElevatedButton(onPressed: () {
-                Navigator.push(context, MaterialPageRoute(
-                    builder: (context) => const BirthdayCardPage2(toName: 'Sam', fromName: 'Emma'))
-                );
-              }, child: const Text('생일 카드 예시2')),
-              ElevatedButton(onPressed: () {
-                Navigator.push(context, MaterialPageRoute(
-                    builder: (context) => const BirthdayCardPage3(toName: 'Sam', fromName: 'Emma'))
-                );
-              }, child: const Text('생일 카드 예시3')),
-              ElevatedButton(onPressed: () {
-                Navigator.push(context, MaterialPageRoute(
-                    builder: (context) => const BusinessCardPage())
-                );
-              }, child: const Text('비즈니스 카드 예시')),
-            ]
-          )
-        ),
+            child:
+                Column(mainAxisAlignment: MainAxisAlignment.center, children: [
+          ElevatedButton(
+              onPressed: () {
+                Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                        builder: (context) => const BirthdayCardPage1(
+                            toName: 'Sam', fromName: 'Emma')));
+              },
+              child: const Text('생일 카드 예시1')),
+          ElevatedButton(
+              onPressed: () {
+                Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                        builder: (context) => const BirthdayCardPage2(
+                            toName: 'Sam', fromName: 'Emma')));
+              },
+              child: const Text('생일 카드 예시2')),
+          ElevatedButton(
+              onPressed: () {
+                Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                        builder: (context) => const BirthdayCardPage3(
+                            toName: 'Sam', fromName: 'Emma')));
+              },
+              child: const Text('생일 카드 예시3')),
+          ElevatedButton(
+              onPressed: () {
+                Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                        builder: (context) => const BusinessCardPage()));
+              },
+              child: const Text('비즈니스 카드 예시')),
+        ])),
       ),
     );
   }

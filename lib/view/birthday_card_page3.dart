@@ -8,8 +8,7 @@ class BirthdayCardPage3 extends StatelessWidget {
   final String fromName;
 
   const BirthdayCardPage3(
-      {Key? key, required this.toName, required this.fromName})
-      : super(key: key);
+      {super.key, required this.toName, required this.fromName});
 
   @override
   Widget build(BuildContext context) {
