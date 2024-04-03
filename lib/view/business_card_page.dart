@@ -25,47 +25,17 @@ class BusinessCardPage extends StatelessWidget {
               Row(
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
-                  ClipOval(
-                    child: Image.network(
-                      'https://img.hankyung.com/photo/202307/AKR20230719120700017_02_i_P4.jpg',
-                      width: 100,
-                      height: 100,
-                      fit: BoxFit.cover,
-                    ),
-                  ),
+                  _profileImage(''),
                   _numAndTitle(118, '게시물'),
                   _numAndTitle(273, '팔로워'),
                   _numAndTitle(794, '팔로잉'),
                 ],
               ),
-              const Align(
-                  alignment: Alignment.centerLeft,
-                  child: Text(
-                    '잠만보',
-                    style: TextStyle(fontSize: 18),
-                  )),
+              _normalText('잠만보'),
               const SizedBox(height: 4),
-              Align(
-                alignment: Alignment.centerLeft,
-                child: Container(
-                    decoration: BoxDecoration(
-                        borderRadius: BorderRadius.circular(50),
-                        color: const Color(0xffefefef)),
-                    child: const Padding(
-                      padding: EdgeInsets.all(8.0),
-                      child: Text('@ jam_man_bo'),
-                    )),
-              ),
-              const Align(
-                  alignment: Alignment.centerLeft,
-                  child: Text(
-                    '개인 블로그',
-                    style: TextStyle(fontSize: 18, color: Color(0xff0d3c61)),
-                  )),
-              const Align(
-                  alignment: Alignment.centerLeft,
-                  child: Text('잠만보입니다.\nZzzz\nZzzz',
-                      style: TextStyle(fontSize: 18))),
+              _threadBadge('jam_man_bo'),
+              _linkText('개인 블로그'),
+              _normalText('잠만보입니다.\nZzzz\nZzzz'),
               const Align(
                   alignment: Alignment.centerLeft,
                   child: Row(
@@ -101,6 +71,17 @@ class BusinessCardPage extends StatelessWidget {
         ));
   }
 
+  Widget _profileImage(String url) {
+    return ClipOval(
+      child: Image.network(
+        'https://img.hankyung.com/photo/202307/AKR20230719120700017_02_i_P4.jpg',
+        width: 100,
+        height: 100,
+        fit: BoxFit.cover,
+      ),
+    );
+  }
+
   Widget _numAndTitle(int num, String title) {
     return Column(
       children: [
@@ -110,6 +91,38 @@ class BusinessCardPage extends StatelessWidget {
         ),
         Text('$title', style: const TextStyle(fontSize: 16))
       ],
+    );
+  }
+
+  Widget _normalText(String text) {
+    return Align(
+        alignment: Alignment.centerLeft,
+        child: Text(
+          text,
+          style: TextStyle(fontSize: 18),
+        ));
+  }
+
+  Widget _linkText(String text) {
+    return Align(
+        alignment: Alignment.centerLeft,
+        child: Text(
+          text,
+          style: TextStyle(fontSize: 18, color: Color(0xff0d3c61)),
+        ));
+  }
+
+  Widget _threadBadge(String id) {
+    return Align(
+      alignment: Alignment.centerLeft,
+      child: Container(
+          decoration: BoxDecoration(
+              borderRadius: BorderRadius.circular(50),
+              color: const Color(0xffefefef)),
+          child: const Padding(
+            padding: EdgeInsets.all(8.0),
+            child: Text('@ jam_man_bo'),
+          )),
     );
   }
 }
